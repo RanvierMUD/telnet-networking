@@ -1,7 +1,7 @@
 'use strict';
 
 const Telnet = require('ranvier-telnet');
-const { Data, Logger } = require('ranvier');
+const { Logger } = require('ranvier');
 const TelnetStream = require('../lib/TelnetStream');
 
 module.exports = {
