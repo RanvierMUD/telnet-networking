@@ -15,13 +15,6 @@ module.exports = {
         telnetSocket.attach(rawSocket);
         telnetSocket.telnetCommand(Telnet.Sequences.WILL, Telnet.Options.OPT_EOR);
 
-        //FIXME: move banned.json into this bundle? Data.parseFile(srcPath + '/../data/banned.json');
-        // not really a good way to get the data path without lots of ../ and assumptions
-        const banned = [];
-        if (banned.includes(telnetSocket.address().address)) {
-          return telnetSocket.destroy();
-        }
-
         const stream = new TelnetStream();
         stream.attach(telnetSocket);
 
